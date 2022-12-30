@@ -3,12 +3,21 @@ package dev.salmon.handshakeremover.asm;
 import dev.salmon.handshakeremover.FMLHandshakeRemover;
 import dev.salmon.handshakeremover.FMLPlugin;
 import net.minecraft.launchwrapper.IClassTransformer;
+import net.minecraftforge.fml.common.network.handshake.FMLHandshakeMessage;
 import org.objectweb.asm.ClassReader;
 import org.objectweb.asm.ClassWriter;
 import org.objectweb.asm.tree.*;
 
 import static org.objectweb.asm.Opcodes.*;
 
+/**
+ * Removes your mod-id from {@link FMLHandshakeMessage} when joining severs. <br>
+ * The benefit being, blacklisted mod-id's can effectively be bypassed, while
+ * keeping the same mod-id.
+ *
+ * @author Schero (<a href="https://github.com/Scherso">...</a>)
+ * @see FMLHandshakeMessage.ModList
+ */
 public class ClassTransformer implements IClassTransformer
 {
 
@@ -33,7 +42,7 @@ public class ClassTransformer implements IClassTransformer
 	 * {@link org.objectweb.asm.Opcodes#IFNE} If the value isn't equal, jump to the label.
 	 * </pre>
 	 *
-	 * @return list of instructions to return to process.
+	 * @return bytecode instructions from {@link ClassWriter}.
 	 */
 	@Override
 	public byte[] transform(String name, String transformedName, byte[] bytes)
