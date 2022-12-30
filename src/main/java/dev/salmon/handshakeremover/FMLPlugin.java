@@ -17,13 +17,14 @@ public class FMLPlugin implements IFMLLoadingPlugin
 {
 
     /**
-     * Check for runtime deobfuscation. If the user is in a developer environment, this will be true.
+     * Check for runtime deobfuscation. If the user
+	 * is in a developer environment, this will be true.
      */
     public static Boolean IS_OBF = false;
 
     /**
-     * @return Return a list of classes that implements the {@link net.minecraft.launchwrapper.IClassTransformer}
-     * interface.
+     * @return Return a list of classes that implements the
+	 * {@link net.minecraft.launchwrapper.IClassTransformer} interface.
      */
     @NotNull
     @Override
@@ -47,8 +48,8 @@ public class FMLPlugin implements IFMLLoadingPlugin
     }
 
     /**
-     * Inject core-mod data into this core-mod This data includes: <br> {@link #IS_OBF} - Whether the game is running in
-     * a deobfuscated environment.
+     * Inject core-mod data into this core-mod This data includes: <br>
+	 * {@link #IS_OBF} - Whether the game is running in a deobfuscated environment.
      */
     @Override
     public void injectData(Map<String, Object> map)
