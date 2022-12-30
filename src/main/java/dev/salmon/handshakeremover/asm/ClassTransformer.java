@@ -33,7 +33,7 @@ public class ClassTransformer implements IClassTransformer
 	 * {@link org.objectweb.asm.Opcodes#IFNE} If the value isn't equal, jump to the label.
 	 * </pre>
 	 *
-	 * @return li st of instructions to return to process.
+	 * @return list of instructions to return to process.
 	 */
 	@Override
 	public byte[] transform(String name, String transformedName, byte[] bytes)
